@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Game Museum</title>
+    <link rel="icon" href="./images/Museum-cartoon-vector-removebg-preview.png" type="image/x-icon">
+</head>
+<style>
+    body {
+        background-image: url('./images/291.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100%;
+    }
+
+    input[type=text],
+    select {
+        width: 500px;
+        height: 15px;
+        padding: 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 2px solid rgb(14, 194, 134);
+        border-radius: 25px;
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    .button {
+        background-color: #04AA6D;
+        border: none;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+
+    .button4 {
+        border-radius: 12px;
+    }
+
+    div {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+    }
+
+    .center {
+        text-align: center;
+    }
+
+    .text1 {
+        font-size: 40pt;
+        color: rgb(255, 255, 255);
+    }
+
+    .center01 {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
+
+    img {
+        border-radius: 20px;
+    }
+</style>
+<script>
+    var btnNext
+    var btnSubmit
+    function checkLandItaly() {
+        txtInput = document.getElementById("txtInput")
+        guess = txtInput.value
+        output = document.getElementById("output")
+        btnSubmit = document.getElementById("btnSubmit")
+        if (guess == "italy" || guess == "Italy" || guess == "อิตาลี") {
+            output.innerHTML = "ฉันว่าน่าจะถูกแล้วนะ เราไปกันต่อเถอะเด็กน้อย"
+            txtInput.style.display = "none"
+            btnSubmit.style.display = "none"
+            btnNext.style.display = "block"
+        }
+        else {
+            output.innerHTML = "ฉันว่าไม่น่าใช่นะ ลองดูใหม่นะ :["
+        }
+    }
+    function next() {
+        location.replace("land04.html")
+    }
+    function loadNext() {
+        output = document.getElementById("output")
+        btnNext = document.getElementById("btnNext")
+        btnNext.style.display = "none"
+    }
+</script>
+
+<body onload="loadNext()">
+    <audio autoplay loop>
+        <source src="./sounds/[EXTENDED] Spy vs. Spy - Background OST.mp3">
+    </audio>
+    <img src="./images/country-png.png" class="center01"
+        style="background-color: aliceblue; width: 25%; border-radius: 10px;"><br>
+    <div class="center">
+        <form>
+            <b>
+                <p style="font-size: 60px; font-family: mitr extralight;">
+            </b>
+            เมืองเวนิส เป็นเมืองของประเทศใด
+            </p>
+            <!-- <label for="txtInput" id="output" style="font-size: xx-large; font-family: mitr extralight;">input your answer</label><br><br>
+            <input type="text" id="txtInput" style="font-size: larger;"><br><br>
+            <input type="button" id="btnSubmit" class="button button4" value="Submit" style="font-family: chewy; font-size: larger;"
+                onclick="checkLandItaly()">
+            <input type="button" class="button button4" value="Next" id="btnNext"
+                style="font-family: chewy; font-size: larger;" onclick="next()"> -->
+            <p>
+                <a href="land03-lose.html"><img src="./images/cyro-card.png" alt="cyro_card" width="350"></a>
+                <a href="land03-lose.html"><img src="./images/sydney-card.png" alt="sydney_card" width="320"></a>
+                <a href="land03-lose.html"><img src="./images/america-card.png" alt="america_card" width="345"></a>
+                <a href="land03-win.html"><img src="./images/venice-card.png" alt="venice_card" width="310"></a>
+            </p>
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Game Museum</title>
+    <link rel="icon" href="./images/Museum-cartoon-vector-removebg-preview.png" type="image/x-icon">
+</head>
+<style>
+    body {
+        background-image: url('./images/2001.png');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100%;
+    }
+
+    .absolute {
+        position: absolute;
+        width: 60px;
+        bottom: 10px;
+    }
+
+    .button {
+        background-color: #e4a317;
+        border-radius: 25px;
+        color: white;
+        padding: 28px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 47px;
+        margin: 4px 2px;
+        cursor: pointer;
+        font-family: chewy;
+        position: absolute;
+        right: 500px;
+        bottom: 350px;
+    }
+
+    .button01 {
+        background-color: #e4a317;
+        border-radius: 25px;
+        color: white;
+        padding: 28px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 47px;
+        margin: 4px 2px;
+        cursor: pointer;
+        font-family: chewy;
+        position: absolute;
+        right: 500px;
+        bottom: 220px;
+    }
+
+    .button02 {
+        background-color: #e4a317;
+        border-radius: 25px;
+        color: white;
+        padding: 28px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 47px;
+        margin: 4px 2px;
+        cursor: pointer;
+        font-family: chewy;
+        position: absolute;
+        right: 500px;
+        bottom: 90px;
+    }
+    .effect:hover{
+        filter: brightness(130%);
+    }
+</style>
+<script>
+
+</script>
+
+<body>
+    <audio autoplay loop>
+        <source src="./sounds/[EXTENDED] Spy vs. Spy - Background OST.mp3">
+    </audio>
+    <p class="absolute">
+        <a href="index.html"><img class="effect" src="./images/back-button.png"></a>
+    </p>
+    <p>
+        <a href="animalStage.html" class="button effect">MYSTERY ANIMALS</a>
+    </p>
+    <p>
+        <a href="workStage.html" class="button01 effect">WORK WORLD!</a>
+    </p>
+    <p>
+        <a href="landStage.html" class="button02 effect">LAND QUEST</a>
+    </p>
+</body>
+
+</html>

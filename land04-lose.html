@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Game Museum</title>
+    <link rel="icon" href="./images/Museum-cartoon-vector-removebg-preview.png" type="image/x-icon">
+</head>
+<style>
+    body {
+        background-image: url('./images/291.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100%;
+    }
+
+    input[type=text],
+    select {
+        width: 500px;
+        height: 15px;
+        padding: 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 2px solid rgb(14, 194, 134);
+        border-radius: 25px;
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    .button {
+        background-color: #04AA6D;
+        border: none;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+
+    .button4 {
+        border-radius: 12px;
+    }
+
+    div {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+    }
+
+    .center {
+        text-align: center;
+    }
+
+    .text1 {
+        font-size: 40pt;
+        color: rgb(255, 255, 255);
+    }
+
+    .center01 {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
+    img {
+        border-radius: 20px;
+    }
+</style>
+<script>
+    var btnNext
+    var btnSubmit
+    function checkLandThailand() {
+        txtInput = document.getElementById("txtInput")
+        guess = txtInput.value
+        output = document.getElementById("output")
+        btnSubmit = document.getElementById("btnSubmit")
+        if (guess == "บาท" || guess == "Bath") {
+            output.innerHTML = "ได้อีกข้อแล้วสินะ ไปกันต่อเถอะ อย่ามัวรีรออยู่เลย"
+            txtInput.style.display = "none"
+            btnSubmit.style.display = "none"
+            btnNext.style.display = "block"
+        }
+        else {
+            output.innerHTML = "ฉันว่าไม่น่าใช่นะ ลองดูใหม่นะ :["
+        }
+    }
+    function next() {
+        location.replace("land03.html")
+    }
+    function loadNext() {
+        output = document.getElementById("output")
+        btnNext = document.getElementById("btnNext")
+        btnNext.style.display = "none"
+    }
+</script>
+
+<body onload="loadNext()">
+    <audio autoplay>
+        <source src="./sounds/Incorrect sound effect.mp3">
+    </audio>
+    <img src="./images/country-png.png" class="center01" style="background-color: aliceblue; width: 25%; border-radius: 10px;"><br>
+    <div class="center">
+        <form>
+            <p style="font-size: 60px; font-family: mitr extralight;">
+                ยังไม่ใช่นะ ลองดูใหม่นะ :[
+            </p>
+            <p>
+                <a href="land04-lose.html"><img src="./images/madrid-card.png" alt="madrid_card" width="300"></a>
+                <a href="land04-win.html"><img src="./images/tokyo-card.png" alt="tokyo_card" width="256"></a>
+                <a href="land04-lose.html"><img src="./images/paris-card.png" alt="paris_card" width="282"></a>
+                <a href="land04-lose.html"><img src="./images/hanoi-card.png" alt="hanoi_card" width="299"></a>
+            </p>
+        </form>
+    </div>
+</body>
+
+</html>

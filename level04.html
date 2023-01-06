@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Game Museum</title>
+    <link rel="icon" href="./images/Museum-cartoon-vector-removebg-preview.png" type="image/x-icon">
+</head>
+<style>
+    body {
+        background-image: url('./images/jungles-01.png');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100%;
+    }
+
+    input[type=text],
+    select {
+        width: 500px;
+        height: 15px;
+        padding: 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 2px solid rgb(14, 194, 134);
+        border-radius: 25px;
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    .button {
+        background-color: #04AA6D;
+        border: none;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+
+    .button4 {
+        border-radius: 12px;
+    }
+
+    div {
+        border-radius: 5px;
+        background-color: rgba(107, 107, 107, 0.699);
+        padding: 20px;
+    }
+
+    .center {
+        text-align: center;
+    }
+
+    .text1 {
+        font-size: 40pt;
+        color: rgb(255, 255, 255);
+    }
+
+    .center01 {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
+
+    img {
+        border-radius: 10%;
+        right: 500px;
+        bottom: 140px;
+    }
+</style>
+<script>
+    var btnNext
+    var btnSubmit
+    function checkAnimalHorse() {
+        txtInput = document.getElementById("txtInput")
+        guess = txtInput.value
+        output = document.getElementById("output")
+        btnSubmit = document.getElementById("btnSubmit")
+        if (guess == "horse" || guess == "ม้า" || guess == "Horse") {
+            output.innerHTML = "ถูกต้องเด็กๆ!!! ไปกันต่อเลยดีกว่า กดปุ่ม next เพื่อไปข้อถัดไปดูสิ"
+            txtInput.style.display = "none"
+            btnSubmit.style.display = "none"
+            btnNext.style.display = "block"
+        }
+        else {
+            output.innerHTML = "ผิดนะจ๊ะ ลองใหม่ดูนะเด็กๆ :]"
+        }
+    }
+    function next() {
+        location.replace("level05.html")
+    }
+    function loadNext() {
+        output = document.getElementById("output")
+        btnNext = document.getElementById("btnNext")
+        btnNext.style.display = "none"
+    }
+    function playSound(animals) {
+        document.getElementById(animals).play();
+    };
+</script>
+
+<body onload="loadNext()">
+    <img src="./images/text01-removebg-preview.png" class="center01">
+    <div class="center">
+        <form>
+            <p id="output" style="font-size: xx-large; background-color: rgba(250, 235, 215, 0.658) ;">
+                รูปภาพที่เห็น และ เสียงที่ได้ยิน คือเสียงของสัตว์ชื่อว่าอะไร
+            </p>
+            <p>
+                <a href="javascript:playSound('horse');"><img src="./images/horse-card.png" alt="horse_card"></a>
+                <audio id="horse" src="./sounds/HORSE-SOUND.mp3" preload="auto"></audio>
+            </p>
+            <label for="txtInput" style="font-size: xx-large; font-family: mitr extralight;">**กดที่รูปภาพเพื่อเล่นเสียง**</label><br>
+            <input type="text" id="txtInput" style="font-size: larger;"><br>
+            <input type="button" id="btnSubmit" class="button button4" value="Submit" style="font-family: chewy; font-size: larger;"
+                onclick="checkAnimalHorse()">
+            <input type="button" class="button button4" value="Next" id="btnNext"
+                style="font-family: chewy; font-size: larger;" onclick="next()">
+        </form>
+    </div>
+</body>
+
+</html>
